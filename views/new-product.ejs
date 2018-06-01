@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<% include index.ejs %>
+<div class="body" style="margin-left: 5%">
+    <form action="/new-product" method="post" enctype="multipart/form-data" id="new_product_form">
+        <select name="product_type" onchange="addStartTimeToAuction(this.options[this.options.selectedIndex].value)">
+            <option value="two_hand">Two hand product</option>
+            <option value="consignment">Consignment</option>
+            <option value="auction">Auction</option>
+        </select>
+        <br>
+        Product name:<br/>
+        <input type="text" name="name">
+        <br>
+        Description:<br>
+        <textarea name="description"></textarea>
+        <br>
+        Price:<br>
+        <input type="text" name="price">
+        <br>
+        <div>Images: (You can upload 3 images)<br>
+            <input type="file" multiple="multiple" name="product_images" style="height: 26px"><br>
+        </div>
+        <div style="display: none" id="start_time">
+            Date and time:<br>
+            <input type="datetime-local" name="start_time" id="checkfortime"><br>
+            End Time:<br>
+            <input type="datetime-local" name="end_time" id="checkfortime2"><br>
+        </div>
+        <input type="submit" class="bodybutton" name="submit_type" value="Submit" >
+    </form>
+</div>
+<script type="text/javascript" src="javascripts/new_product.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+body {
+    padding: 50px;
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+.body{
+    margin-top: 100px;
+    width: 100%;
+}
+
+.bodybutton{
+    margin: 20px 100px;
+    font-size: 18px;
+    height: 26px;
+    background: #333739;
+    color: #f1f1f1;
+    border: none;
+
+}
+select {
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #000;
+
+    height: 24px;
+    font-size: 18px;
+
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+
+
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    padding: 0px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 0 0 0;
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    z-index: 999999;
+}
+
+/*index*/
+#index {
+    margin-left: 0px;
+}
+
+
+/*main-menu*/
+#main-menu{
+    display: inline-block;
+}
+#marchedu{
+    font: normal 200 23px "Lucida Grande", Helvetica, Arial, serif;
+}
+#header div a {
+    list-style: none;
+    font: normal 200 18px "Lucida Grande", Helvetica, Arial, serif;
+    color: #f1f1f1;
+}
+
+#sheet {
+    margin: 0px 43px;
+    padding-top: 20px;
+}
+
+.index-button{
+    margin: 0px 5px;
+    border-width: 2px;
+    font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: transparent;
+    border: none;
+}
+
+
+.headindex, .headrelease, .dropdown{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+#wrap {
+    display: -webkit-box;
+    margin: 0px 43px;
+    padding-top: 20px;
+}
+#lastname {
+    margin: 0px 5px;
+}
+
+.tip{
+    color: #aaaaaa;
+    font-size:15px;
+}
+
+.link{
+    color: #00B7FF;
+    font-size:15px;
+}
+
+.login{
+    margin-left: 20%;
+}
+#signUp{
+    margin-left: 20%;
+}
+/*Sidebar*/
+.dropbtn {
+    background-color: transparent;
+    color: #f1f1f1;
+    display: inline;
+    font: normal 200 23px "Lucida Grande", Helvetica, Arial, serif;
+    border: none;
+    cursor: pointer;
+
+}
+
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    text-align: right;
+    float: right;
+    margin-right: 0;
+    height: 100%;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.9);
+    min-width: 100px;
+    color: #778899;
+    text-align: left;
+    width: 100%;
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+    background: rgba(0,0,0,0.9);
+    padding: 12px 5px;
+    text-decoration: none;
+    display: block;
+    color: #778899;
+    font-size: 19px;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #f1f1f1;}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+    color: #aaaaaa;
+    background-color: #333739;
+    margin: 0px 5px;
+    border-width: 2px;
+}
+
+/* fo test*/
+div.wrap {
+    padding: 10px 0 0 10px;
+}
+
+div.square {
+    float: left;
+    height: 400px;
+    width: 400px;
+    padding: 50px 0 0 0;
+    margin: 0 1.5% 3% 1.5%;
+    border-radius: 4%;
+}
+
+#sidebar ul li a:hover:not(.active) {
+    background-color: rgb(43,43,43);
+    color: #f1f1f1;
+}
+
+/*item published*/
+#item-published{
+    text-align: center;
+}
+#item-published table td {
+    background: none;
+}
+
+.headrelease{
+    text-align: right;
+    float: left;
+    position: relative;
+    border-right:1px solid #ffffff;
+    padding-right: 5px;
+    display: inline-block;
+    margin-top: 18px;
+    width: 23%;
+}
+
+/*headrr*/
+.headerr{
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    background-color: white;
+    margin-left: 0;
+    left:0;
+    margin-top: 0;
+    top:50px;
+    z-index: 8888;
+}
+.logo, .headsearch, .headsearchfor{
+    display: inline-block;
+}
+.logo{
+    float: left;
+    height: auto;
+    width: 30%;
+}
+img{
+    display: inline-block;
+    width: 23%;
+    height: 23%;
+    margin-left: 30px;
+}
+
+.headsearch{
+    width: 70%;
+}
+/*Search*/
+input {
+    height: 20px;
+    min-width: 150px;
+    font-size: 18px;
+    text-align: start;
+    transition: width 1s;
+    -webkit-transition: width 1s;
+    border-width: 1px;
+}
+option{
+    height: 20px;
+    font-size: 18px;
+}
+.search-input{
+    width: 50px;
+}
+
+/*.search-input:hover {*/
+    /*width: 350px;*/
+/*}*/
+:after, :before {
+    box-sizing: border-box;
+}
+table {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+td {
+    background-color: rgb(249,252,255);
+    height: 20px;
+    width: 350px;
+}
+
+td:hover {
+    background-color: rgb(168,213,252);
+    cursor: default;
+}
+
+/*product details*/
+#product_name{
+    margin-bottom: 0;
+    margin-left: 20%;
+    font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+#product_price{
+    font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin-left: 20%;
+}
+
+#product_detail{
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin-left: 20%;
+}
+
+#add\ to\ cart{
+    font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #f1f1f1;
+
+}
+
+#add{
+    background-color:rgb(0,0,0);
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 20%;
+}
+
+/*auction table*/
+#hor-minimalist-b
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 20px;
+    background: #ffffff;
+    margin: 45px;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+}
+#hor-minimalist-b th
+{
+    font-size: 24px;
+    font-weight: normal;
+    color:#333739;
+    padding: 10px 8px;
+    border-bottom: 2px solid #778899;
+}
+#hor-minimalist-b td
+{
+    border-bottom: 1px solid #ccc;
+    border-left: 2px solid #ffffff;
+    color: #333739;
+    padding: 6px 8px;
+}
+#hor-minimalist-b tbody tr:hover td
+{
+    color: #aaaaaa;
+    background: rgba(0,0,0,0.02);
+}

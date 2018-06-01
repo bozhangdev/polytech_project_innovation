@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>order</title>
+</head>
+<body>
+<% include index.ejs %>
+<div class="body">
+    <h1>Order #<%= id %> - <%= status %></h1><br>
+    <p>Order date: <%= date.toLocaleDateString() %></p>
+    <div>
+        <h3>Shipping address:</h3>
+        <p><%=firstname%> <%=lastname%></p>
+        <p><%=street%></p>
+        <p><%=city%></p>
+        <p><%=postalcode%></p>
+        <p><%=telephone%></p>
+    </div>
+
+</div>
+</body>

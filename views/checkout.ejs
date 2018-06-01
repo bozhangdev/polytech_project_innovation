@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check out</title>
+</head>
+<body>
+<% include index.ejs %>
+<div class="body">
+    <h1>Name: <%= name %></h1>
+    <h2>Price: <%= price %></h2>
+    <form method="post" action='/checkout/result'>
+        <input type="hidden" name="productId" value=<%= productId %>>
+        <input type="hidden" name="productType" value=<%=productType%>>
+        <div>
+            <h3>First Name:</h3>
+            <input type="text" name="firstName">
+        </div>
+        <div>
+            <h3>Last Name:</h3>
+            <input type="text" name="lastName">
+        </div>
+        <div>
+            <h3>Telephone Number:</h3>
+            <input type="text" name="telephone">
+        </div>
+        <div>
+            <h3></h3>
+        </div>
+        <h3>Address:</h3>
+        Street and number<br>
+        <input type="text" name="street"><br>
+        <h3>City:</h3>
+        <input type="text" name="city"><br>
+        <h3>Postal Code</h3>
+        <input type="text" name="postalCode">
+        <input type="submit" value="Buy">
+    </form>
+</div>
+</body>
+</html>

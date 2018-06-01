@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div id="header">
+        <div class="headindex">
+            <a href="/">
+                <div>
+                    <span id="marchedu">MarchéEdu</span>
+                </div>
+            </a>
+        </div>
+
+
+        <% if(locals.status){ %>
+        <div class="dropdown">
+            <button class="dropbtn index-button">My Account</button>
+            <div class="dropdown-content">
+                <a href="/user">ACCOUNT DETAILS</a>
+                <a href="/user/orders">MY ORDERS</a>
+                <a href="/user/items-published/auctions">AUCTIONS PUBLISHED</a>
+                <a href="/user/items-published/two-hands">PRODUCTS PUBLISHED</a>
+                <a href="/user/items-published/consignments">CONSIGNMENTS PUBLISHED</a>
+                <a href="#">WISHLIST</a>
+                <a href="#">ADDRESS BOOK</a>
+                <a href="/logout">Log out</a>
+
+            </div>
+        </div>
+        <% } else { %>
+        <div class="dropdown">
+            <button class="dropbtn index-button">Connection</button>
+            <div class="dropdown-content">
+                <a href="/login">Log In</a>
+                <a href="/signup">Create an Account</a>
+
+            </div>
+        </div>
+        <%} %>
+</div>
+<div class="headerr">
+    <div class="logo">
+        <img src="/pic/Logo.png" alt="Logo" >
+    </div>
+    <!--<div >-->
+        <!--<form action="/search/result", method="get">-->
+            <!--<input class="search-input" type = "text" name = "product_name" value placeholder="Search"/><br />-->
+        <!--</form>-->
+    <!--</div>-->
+    <div class="headsearch">
+        <div class="headrelease">
+            <a href="/new-product"><button class="index-button">RELEASE A PRODUCT</button></a>
+        </div>
+        <div class="headsearchfor">
+        <ul id="main-menu">
+                <form id="searchform" action="/search/index-result"  method="get">
+                    <select name="select_product_type">
+                        <option value="two_hand">Two hand product</option>
+                        <option value="consignment">Consignment</option>
+                        <option value="auction">Auction</option>
+                        <option value="all type" selected = "selected">all type</option>
+                    </select>
+
+                    <input class="search-input" type="text" name="product_name" value placeholder="Search..."/>
+                    <button class="index-button">GO</button>
+
+                </form>
+        </ul>
+        </div>
+    </div>
+    
+</div>
+
+
+<br>
+</body>
+</html>

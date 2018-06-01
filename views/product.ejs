@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<body id = "products">
+<%include index.ejs%>
+<div class="body">
+    <h2><%=product.name%></h2>
+    <h3><%=product.price%></h3>
+    <p><%=product.description%></p><br>
+    <img src=<%=product.image%>>
+    <form method="post" action="/checkout">
+        <input type="hidden" name="productId" value=<%=product.id%>>
+        <input type="hidden" name="productType" value=<%=product.productType%>>
+        <input type="submit" value="Buy it">
+    </form>
+</div>
+</body>

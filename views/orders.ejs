@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders</title>
+</head>
+<body>
+<% include index.ejs %>
+<div class="body">
+    <% results.forEach(function(order) { %>
+    <div><a href="/user/orders/<%= order.id%>"><%=order.id%></a><br>
+        <p><%=order.date.toLocaleDateString()%></p>
+    </div>
+    <% })%>
+</div>
+</body>

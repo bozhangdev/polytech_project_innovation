@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>signup</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+<%include index.ejs%>
+<div class="body">
+<div id="signUp">
+    <h1>CREATE AN ACCOUNT</h1>
+    <form action="/signup" method="post">
+        <div id="sheet">
+            E-mail:<br/>
+            <input type = "email" name = "user_email" />
+        </div>
+        <div id="sheet">
+            Password:<br />
+            <input type = "password" name = "user_pwd" />
+        </div>
+        <div id="sheet">
+            Confirm:<br />
+            <input type = "password" name = "user_pwc" /><br />
+        </div>
+        <div id="wrap">
+            <div id = "firstname">
+                First Name:<br />
+                <input type = "text" name = "user_fname" /><br />
+            </div>
+            <div id="lastname">
+                Last Name:<br />
+                <input type = "text" name = "user_lname" /><br />
+            </div>
+        </div>
+        <!--Tel:-->
+        <!--<input type = "text" class="user_tel" id="user_tel" name = "user_tel" /><br />-->
+        <!--Address:-->
+        <!--<input type = "text" class="user_add" id="user_add" name = "user_add" /><br />-->
+        <!--City:-->
+        <!--<input type = "text" class="user_city" id="user_city" name = "user_city" /><br />-->
+        <!--Postcode:-->
+        <!--<input type = "number" class="user_zip" id="user_zip" name = "user_zip" /><br />-->
+        <br />
+        <button id="button" class="bodybutton">Sign Up</button>
+
+        <% if(locals.status=="success"){ %>
+        <div class="form-btn">
+            Sign up successfully, please clicl <a href='/login' >Log in</a>
+        </div>
+        <%} %>
+    </form>
+</div>
+</div>
+</body>
+</html>

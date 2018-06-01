@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<% include index.ejs %>
+
+<div class="body">
+    <h1>Result for: <%= productname %><br/>
+        <h4>Type: <%= producttype %> </h4>
+        <h4>Sort by: <%= productsort %></h4>
+    </h1>
+    <form id="searchform2" action="/search/result-sort" method="get">
+        <select id="selectsort" onchange="onchangesubmit()" name="select_product_order">
+            <option value="name">sort by name</option>
+            <option value="price">sort by price</option>
+            <option value="no sort" selected="selected">no sort</option>
+        </select>
+    </form>
+    <script>
+        function onchangesubmit() {
+            var form = document.getElementById("searchform2");
+            form.submit();
+        }
+    </script>
+</div>
+
+<div class="wrap">
+    <% searchresult.forEach(function(item) { %>
+
+    <div class="square">
+        <% if(item.image == null){%>
+            <img src="/picture.jpg" width="100" height="80" />
+        <% } else {%>
+
+        <img src="<%= item.image %>" width="100" height="80"/>
+
+        <%}%>
+        <% if (producttype === 'Auctions') { %>
+        <h3><a href="/auction/<%= item.id %>"><%= item.name %></a></h3>
+        <% } else { %>
+        <h3><a href="/product?type=<%= item.type %>&id=<%= item.id %>"><%= item.name %></a></h3>
+        <% } %>
+
+        <h5>Description: <%= item.description %></h5>
+        <h4>Price: <%= item.price %></h4>
+    </div>
+
+    <% }) %>
+
+</div>
+</div>
+</body>
+</html>

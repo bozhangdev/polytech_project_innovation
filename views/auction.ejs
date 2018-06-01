@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auction</title>
+</head>
+<body>
+<% include index.ejs %>
+<div class="body">
+    <h1><%= auction.name %></h1>
+    <h2>Start Price: <%= auction.price %></h2>
+
+    <div style="display: -webkit-box; text-align: center; width: 80%">
+        <div style="width: 50%">
+            <p>Start Time: <%= auction.starttime.toLocaleString() %></p>
+
+        </div>
+
+        <div style="width: 50%;">
+            <p>End Time: <%=auction.endtime.toLocaleString()%></p>
+        </div>
+    </div>
+
+    <% let date = new Date() %>
+    <% if (auction.starttime.getTime() < date.getTime() && auction.endtime.getTime() > date.getTime() && canJoin) { %>
+    <div>
+        Your price:<br>
+        <form action="/auction/<%= auction.id %>" method="post">
+            <input type="number" name="new_price">
+            <input type="submit" class="bodybutton" value="BID">
+        </form>
+    </div>
+    <% } %>
+
+    <% if (isTheFinalUser && auction.status === 'ready_to_pay') { %>
+    <div>
+
+        <form action="/checkout" method="post">
+            <input type="hidden" name="productId" value=<%=auction.id%>>
+            <input type="hidden" name="productType" value="auction">
+            <input type="submit" class="bodybutton" value="Buy It">
+        </form>
+    </div>
+    <%}%>
+
+
+    <div>
+        <table id="hor-minimalist-b" summary="Auction History">
+            <thead>
+            <tr>
+                <th scope="col">User</th>
+                <th scope="col">Bid</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% histories.forEach(function(history) { %>
+                <tr>
+                    <td><%= history.fk_user %></td>
+                    <td>$<%= history.price %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+</body>

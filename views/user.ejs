@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Info</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/canvi.css">
+</head>
+<body>
+<%include index.ejs%>
+<div class="body" style="margin-left: 5%">
+
+<div id="header2">
+    <form action="/user" method="post">
+        <div id="wrap">
+            <div id = "firstname">
+                First Name:<br />
+                <input type = "text" name = "user_fname" value=<%= user.firstname%> ><br />
+            </div>
+            <div id="lastname">
+                Last Name:<br />
+                <input type = "text" name = "user_lname" value="<%= user.lastname%>"><br />
+            </div>
+        </div>
+        <div id="sheet">
+            E-mail:<br/>
+            <input type = "email" style="width: 384px;" id="autoinput" name = "user_email" value=<%= user.email%>>
+         </div>
+        <button id="button" class="bodybutton">Save</button>
+    </form>
+</div>
+</div>
+<script type="text/javascript" src="/javascripts/opennav.js"></script>
+<script type="text/javascript" src="/javascripts/canvi.js"></script>
+</body>
+</html>
+
